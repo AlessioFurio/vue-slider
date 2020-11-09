@@ -1,6 +1,3 @@
-// Stampare a schermo un messaggio all’interno di un h1, utilizzando i data.
-// BONUS: Aggiungere un’immagine presa anch’essa da un data
-
 var app = new Vue({
     el: '#root',
     data: {
@@ -14,7 +11,7 @@ var app = new Vue({
         ]
     },
     methods: {
-        nextImage() {
+        clock () {
             setInterval(() => {
 
                 this.imageIndex += 1; // incremento di 1 l' indice corrente
@@ -22,6 +19,13 @@ var app = new Vue({
                     this.imageIndex = 0; // se l' indice supera images.length, lo porto a 0
                 }
             }, 2000) // fine set interval
+        },
+
+        nextImage() {
+                this.imageIndex += 1; // incremento di 1 l' indice corrente
+                if(this.imageIndex >= this.images.length){
+                    this.imageIndex = 0; // se l' indice supera images.length, lo porto a 0
+                }
         }, // fine nextImage
 
         prevImage () { // funzione decremento per scorrere all' indietro lo slider
@@ -33,8 +37,12 @@ var app = new Vue({
 
     }, // fine methods
 
+
+
     created() {
-    this.nextImage()
+    this.clock()
+
     }, // fine created
+
 
 }); // fine app
