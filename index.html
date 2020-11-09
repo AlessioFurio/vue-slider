@@ -14,12 +14,18 @@
 
         <div id="root">
             <div class="wp-slider">
+
                 <div class="arrow-prev">
                     <i @click="prevImage()" class="fas fa-arrow-left fa-2x"></i>
                 </div>
+
                 <div class="slider">
                     <img :src="images[imageIndex]" alt="">
+                    <div class="bullets">
+                        <i v-for="(images,index) in images.length" class="far fa-circle fa-2x" :class="index == imageIndex ? 'active' : null "></i>
+                    </div>
                 </div>
+
                 <div class="arrow-next">
                     <i @click="nextImage()" class="fas fa-arrow-right fa-2x"></i>
                 </div>
