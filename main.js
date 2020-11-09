@@ -8,11 +8,12 @@ var app = new Vue({
             "images/image3.jpg",
             "images/image4.jpg",
             "images/image5.jpg"
-        ]
-    },
+        ],
+		stopSlider: null
+	},
     methods: {
         clock () {
-            setInterval(() => {
+            this.stopSlider = setInterval(() => {
 
                 this.imageIndex += 1; // incremento di 1 l' indice corrente
                 if(this.imageIndex >= this.images.length){
@@ -20,6 +21,11 @@ var app = new Vue({
                 }
             }, 2000) // fine set interval
         },
+
+        stopSlide () {
+	        clearInterval(this.stopSlider)
+            },
+
 
         nextImage() {
                 this.imageIndex += 1; // incremento di 1 l' indice corrente

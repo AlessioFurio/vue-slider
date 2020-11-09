@@ -46,3 +46,13 @@
     background-color: #000;
     border-radius: 50%;
 }
+
+.slider button {
+    border: none;
+    padding: 10px;
+    font-size: 20px;
+    border-radius: 30px;
+    background-color: red;
+    cursor: pointer;
+    font-weight: bold;
+}
