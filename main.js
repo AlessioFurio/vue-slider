@@ -9,7 +9,8 @@ var app = new Vue({
             "images/image4.jpg",
             "images/image5.jpg"
         ],
-		stopSlider: null
+		stopSlider: null,
+
 	},
     methods: {
         clock () {
@@ -27,10 +28,12 @@ var app = new Vue({
             },
 
 
+
         nextImage() {
                 this.imageIndex += 1; // incremento di 1 l' indice corrente
                 if(this.imageIndex >= this.images.length){
                     this.imageIndex = 0; // se l' indice supera images.length, lo porto a 0
+
                 }
         }, // fine nextImage
 
@@ -38,8 +41,13 @@ var app = new Vue({
             this.imageIndex -=1; // decremento di 1 indice corrente
             if (this.imageIndex < 0) {
                 this.imageIndex = this.images.length -1; //se l' indice e' minore di 0, gli assegno il valore di images.length - 1 per farlo ripartire dall' ultimo elemento presente nell' array
+
             }
         }, // fine prevImage
+
+        goImage(index) {
+            this.imageIndex = index
+        }
 
     }, // fine methods
 

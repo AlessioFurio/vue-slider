@@ -22,7 +22,7 @@
                 <div class="slider">
                     <img :src="images[imageIndex]" alt="">
                     <div class="bullets">
-                        <i v-for="(images,index) in images.length" class="far fa-circle fa-2x" :class="index == imageIndex ? 'active' : null "></i>
+                        <i @click="goImage(index)" v-for="(images,index) in images.length" class="far fa-circle fa-2x" :class="index == imageIndex ? 'active' : null " ></i>
                         <button @click="stopSlide" type="button" name="button">Stop Slider</button>
                     </div>
                 </div>
