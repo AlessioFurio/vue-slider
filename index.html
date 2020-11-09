@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="it" dir="ltr">
+    <head>
+
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+        <title>Vue Hello</title>
+        <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.1/css/all.css" integrity="sha384-vp86vTRFVJgpjF9jiIGPEEqYqlDwgyBgEF109VFjmqGmIY/Y4HV4d3Gp2irVfcrp" crossorigin="anonymous">
+        <link rel="stylesheet" href="style.css">
+        <script src="https://cdn.jsdelivr.net/npm/vue"></script>
+    </head>
+    <body>
+
+        <div id="root">
+            <div class="wp-slider">
+                <div class="arrow-prev">
+                    <i @click="prevImage()" class="fas fa-arrow-left fa-2x"></i>
+                </div>
+                <div class="slider">
+                    <img :src="images[imageIndex]" alt="">
+                </div>
+                <div class="arrow-next">
+                    <i @click="nextImage()" class="fas fa-arrow-right fa-2x"></i>
+                </div>
+            </div>
+        </div>
+
+
+
+    <script src="main.js" charset="utf-8"></script>
+    </body>
+</html>
